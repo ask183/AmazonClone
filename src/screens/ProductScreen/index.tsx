@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import styles from './styles';
 import product from '../../data/product';
 import {Picker} from '@react-native-picker/picker';
+import {useRoute} from '@react-navigation/native';
 import QuantitySelector from '../../components/QuantitySelector';
 import Button from '../../components/Button';
 import ImageCarousel from '../../components/ImageCarousel';
@@ -12,6 +13,9 @@ const ProductScreen = () => {
     product.options ? product.options[0] : null,
   );
   const [quantity, setQuantity] = useState(1);
+
+  const route = useRoute();
+  console.log(route.params);
 
   return (
     <ScrollView style={styles.root}>
